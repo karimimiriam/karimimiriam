@@ -14,7 +14,7 @@ Accepts payments from customers via STK Push and Paybill (C2B), and disburses pa
 **How it's engineered**
 M-Pesa communicates asynchronously: your server gets an immediate acknowledgment, then the real result arrives later as a webhook callback, sometimes more than once, sometimes not at all. The system is built around that reality rather than around the happy path:
 
-- A transaction ledger with an explicit state machine (initiated → pending → success/failed/cancelled), so the database — not the UI — is always the source of truth
+- A transaction ledger with an explicit state machine (initiated → pending → success/failed/cancelled), so the database not the UI is always the source of truth
 - Idempotent webhook handling, keyed on Safaricom's own request identifiers, so duplicate callbacks can't double-credit a payment
 - A nightly reconciliation job that queries M-Pesa directly for any transaction that never received a callback, so nothing silently falls through
 - Secrets and credentials isolated server-side, never exposed to the client
@@ -23,7 +23,7 @@ M-Pesa communicates asynchronously: your server gets an immediate acknowledgment
 Node.js, TypeScript, PostgreSQL, deployed to production with CI/CD.
 
 **Status**
-In active development — repo and live demo linked here once Phase 1 is complete.
+In active development  repo and live demo linked here once Phase 1 is complete.
 
 `github.com/karimimiriam/mpesa-integration` *(coming soon)*
 
