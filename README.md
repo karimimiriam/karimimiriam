@@ -27,4 +27,4 @@ In active development  repo and live demo linked here once Phase 1 is complete.
 
 `github.com/karimimiriam/mpesa-integration` *(coming soon)*
 
-**Connect:** [LinkedIn or X — your call]
+**Connect:** https://x.com/mariamdefa1
